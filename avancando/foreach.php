@@ -15,6 +15,11 @@ $contasCorrentes = [
     ]
 ];
 
+$contasCorrentes[] = [
+    'titular' => 'Beatriz',
+    'saldo' => 2000
+];
+
 foreach ($contasCorrentes as $indice => $conta) {
     echo $indice;
     echo $conta['titular'] . PHP_EOL;
