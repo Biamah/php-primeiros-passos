@@ -45,6 +45,8 @@ $contasCorrentes['000.000.000-03'] = sacar($contasCorrentes['000.000.000-03'], v
 $contasCorrentes['000.000.000-01'] = depositar($contasCorrentes['000.000.000-01'], valorADepositar: 900);
 
 foreach ($contasCorrentes as $indice => $conta) {
-    exibeMensagem( mensagem: $indice . '' . $conta['titular'] . '' . $conta['saldo']);
+    exibeMensagem( 
+        mensagem:"$indice {$conta['titular']}  {$conta['saldo']}" 
+    );
 }
 
