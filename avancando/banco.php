@@ -5,6 +5,17 @@ function exibeMensagem($mensagem)
     echo $mensagem . PHP_EOL;
 }
 
+function sacar($conta, $valorASacar)
+{
+    if ($valorASacar > $conta['saldo']) {
+        exibeMensagem( mensagem: "Voce não pode sacar!");
+    } else {
+        $conta['saldo'] -= $valorASacar;
+    }
+
+    return $conta;
+}
+
 $contasCorrentes = [
     '000.000.000-00' => [
         'titular' => 'Vinicius',
@@ -20,10 +31,9 @@ $contasCorrentes = [
     ]
 ];
 
-$contasCorrentes['000.000.000-03'] ['saldo'] -= 500; 
-
-
+$contasCorrentes['000.000.000-03'] = sacar($contasCorrentes['000.000.000-03'], valorASacar: 500);
 
 foreach ($contasCorrentes as $indice => $conta) {
     exibeMensagem($indice . '' . $conta['titular'] . '' . $conta['saldo']);
 }
+
