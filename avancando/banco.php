@@ -23,8 +23,9 @@ $contasCorrentes['000.000.000-01'] = depositar($contasCorrentes['000.000.000-01'
 titularLetrasMaiusculas($contasCorrentes['000.000.000-01']);
 
 foreach ($contasCorrentes as $indice => $conta) {
+    list('titular' => $titular, 'saldo' => $saldo) = $conta;
     exibeMensagem( 
-        mensagem:"$indice {$conta['titular']}  {$conta['saldo']}" 
+        mensagem:"$indice $titular $saldo" 
     );
 }
 
